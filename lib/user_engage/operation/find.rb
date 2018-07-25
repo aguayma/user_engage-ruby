@@ -1,4 +1,5 @@
 require 'user_engage/errors'
+require 'json'
 
 module UserEngage
   module Operation
@@ -15,14 +16,14 @@ module UserEngage
       private
 
       def get_resource(params)
-        path = "/#{resource_name}/search/"
+        path = "/#{resource_name}/search/?"
         response = UserEngage.client.get(path, params)
         check_for_existing_resource!(response, params)
         JSON.parse(response.body, symbolize_names: true)
       end
 
       def check_for_existing_resource!(response, params)
-        return if response.status == 200
+        return if response.status == 200 || response.status == 201
         raise(
           UserEngage::ResourceNotFoundException,
           "No resource with {#{params.inspect}} found!"

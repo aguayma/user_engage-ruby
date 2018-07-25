@@ -39,11 +39,18 @@ end
 Then query models or delete them like
 
 ```ruby
+# Search for users with:
 user = UserEngage::User.find(email: 'markus@company-mood.com')
 # => <#UserEngage::User id:12345 email:...>
 
 user.destroy
 # => true
+
+# Create users with 
+user = UserEngage::User.create(email: 'john@doe.com')
+# => #<UserEngage::User email="john@doe.com"
+
+# Note when you create a user without specifying name, the email will be used for the name
 ```
 
 

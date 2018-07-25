@@ -1,5 +1,6 @@
 require 'user_engage/base_model'
 require 'user_engage/operation/find'
+require 'user_engage/operation/create'
 require 'user_engage/operation/destroy'
 
 require 'user_engage/attribute'
@@ -11,6 +12,7 @@ module UserEngage
     ##############
     ## Includes ##
     ##############
+    extend Operation::Create
     extend Operation::Find
     include Operation::Destroy
 
@@ -59,7 +61,7 @@ module UserEngage
     private_class_method
 
     def self.supported_find_params
-      %i[email key phone_number date]
+      %i[email key phone_number date first_name last_name]
     end
 
     def self.resource_name

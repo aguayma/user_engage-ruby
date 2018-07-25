@@ -15,6 +15,10 @@ module UserEngage
       request(:get, path, parameters)
     end
 
+    def post(path, parameters)
+      x = request(:post, path, parameters)
+    end
+
     # Public: Calls the base_url with the given path and parameters
     #
     def delete(path)
