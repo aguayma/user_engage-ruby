@@ -50,7 +50,7 @@ user.destroy
 user = UserEngage::User.create(email: 'john@doe.com')
 # => #<UserEngage::User email="john@doe.com"
 
-# Note when you create a user without specifying name, the email will be used for the name
+# Note when you create a user without specifying first_name or last_name, the email will be used for both
 ```
 
 

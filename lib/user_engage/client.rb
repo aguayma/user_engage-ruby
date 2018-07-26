@@ -16,7 +16,7 @@ module UserEngage
     end
 
     def post(path, parameters)
-      x = request(:post, path, parameters)
+      request(:post, path, parameters)
     end
 
     # Public: Calls the base_url with the given path and parameters
