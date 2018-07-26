@@ -1,4 +1,5 @@
 require 'user_engage/base_model'
+require 'dry-types'
 
 module UserEngage
   class Attribute < BaseModel

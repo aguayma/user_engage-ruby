@@ -6,6 +6,7 @@ require 'user_engage/operation/destroy'
 require 'user_engage/attribute'
 require 'user_engage/list'
 require 'user_engage/tag'
+require 'dry-types'
 
 module UserEngage
   class User < BaseModel
