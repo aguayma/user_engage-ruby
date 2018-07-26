@@ -6,6 +6,6 @@ module UserEngage
       include Dry::Types.module
     end
 
-    transform_types :schema
+    # transform_types :schema
   end
 end
